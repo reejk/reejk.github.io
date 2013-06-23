@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I'm in ...</title>
+	<style>
+	#left::-webkit-scrollbar {
+		height: 12px;
+		width: 6px;
+		background: #333;
+	}
+	#left::-webkit-scrollbar-thumb {
+		background: #555;
+		-webkit-border-radius: 1ex;
+		-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+	}
+	
+	body {
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+		background: #333333;
+		color: white;
+		/*overflow: hidden;*/
+	}
+	
+	#avatar {
+		width: 17%;
+		background: #222222;
+		height: 25%;
+		position: fixed;
+		top: 3%;
+		left: 2%;
+		border: 1px #555555 solid;
+		text-align: center;
+		overflow: hidden;
+	}
+	
+	#avatar div {
+		margin: 3px 3px 3px 3px;
+		height: 95%;
+	}
+	
+	#avatar img {
+		height: 100%;
+		border: 1px solid #1F1F1F;
+	}
+	
+	#left {
+		width: 17%;
+		background: #222222;
+		color: silver;
+		min-height: 60%;
+		position: fixed;
+		top: 30%;
+		left: 2%;
+		border: 1px #555555 solid;
+		overflow: auto;
+	}
+	
+	#dev {
+		width: 130px;
+		background: #222222;
+		color: silver;
+		min-height: 30%;
+		position: fixed;
+		top: 20%;
+		left: 78%;
+		border: 1px #888 solid;
+		overflow: auto;
+		text-align: right;
+		padding: 10px 10px 10px 10px;
+	}
+	
+	#html {
+		position: absolute;
+		top: 5%;
+		left: 15%;
+		height: 85%;
+		width: 60%;
+	}
+	
+	#data {
+		padding-left:10%;
+		padding-right: 2%;
+		padding-bottom: 2%;
+		background: #111111;
+		color: silver;
+		border: 1px #555555 solid;
+		width: 95%;
+		min-height: 100%;
+	}
+	
+	#vip_zone {
+		position: fixed;
+		top: 96%;
+		left: 5%;
+	}
+	
+	#vip_zone a { color: #333333; }
+	#vip_zone a:hover { color: #999; text-decoration: none; }
+	
+	#left #links {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		padding-right: 8px;
+		padding-top: 8px;
+		width:90%;
+		text-align: right;
+	}
+	
+	a {
+		color: silver;
+		text-decoration: none;
+	}
+	
+	a:visited {
+		color: gray;
+		text-decoration: none;
+	}
+	
+	a:hover { text-decoration: underline; color: white; }
+	a.noline:hover { text-decoration: none; color: white; }
+	#left a:hover { text-decoration: underline; color: orange; }
+	a:active { color: orange; }
+	
+	#google { background: url(http://favicon.yandex.net/favicon/gplus.to) right center no-repeat; padding-right: 24px; }
+	#facebook { background: url(http://favicon.yandex.net/favicon/facebook.com) right center no-repeat; padding-right: 24px; }
+	#vkontakte { background: url(http://favicon.yandex.net/favicon/vk.com) right center no-repeat; padding-right: 24px; }
+	#twitter { background: url(http://favicon.yandex.net/favicon/twitter.com) right center no-repeat; padding-right: 24px; }
+	#linkedin { background: url(http://favicon.yandex.net/favicon/linkedin.com) right center no-repeat; padding-right: 24px; }
+	#habr { background: url(http://favicon.yandex.net/favicon/habrahabr.ru) right center no-repeat; padding-right: 24px; }
+	#steam { background: url(http://favicon.yandex.net/favicon/steampowered.com) right center no-repeat; padding-right: 24px; }
+	#lastfm { background: url(http://favicon.yandex.net/favicon/last.fm) right center no-repeat; padding-right: 24px; }
+	#email { background: url(http://favicon.yandex.net/favicon/mail.google.com) right center no-repeat; padding-right: 24px; }
+	#skype { background: url(http://favicon.yandex.net/favicon/skype.com) right center no-repeat; padding-right: 24px; }
+	#icq { background: url(http://favicon.yandex.net/favicon/icq.com) right center no-repeat; padding-right: 24px; }
+	#other { background: url(http://favicon.yandex.net/favicon/google.com) right center no-repeat; padding-right: 24px; }
+	
+	#codegoogle { background: url(http://favicon.yandex.net/favicon/code.google.com) right center no-repeat; padding-right: 24px; }
+	#github { background: url(http://favicon.yandex.net/favicon/github.com) right center no-repeat; padding-right: 24px; }
+	#bitbucket { background: url(http://favicon.yandex.net/favicon/bitbucket.org) right center no-repeat; padding-right: 24px; }
+
+	</style>
+	<script language="JavaScript">
+	function expandImage() {
+		img = document.getElementById('screen');
+		if(img.style.height == 'auto')
+		    img.style.height = '0px';
+		else
+		    img.style.height = 'auto';
+	}
+	
+	var avatars = ['avatar.png', 'ava[t]ar.png'];
+	var ava_id = 0;
+	function changeAvatar() {
+		ava_id = (ava_id + 1) % avatars.length;
+		document.getElementById('avaimg').src = avatars[ava_id];
+	}
+	</script>
+</head>
+<body onLoad="setInterval('changeAvatar();', 20000);">
+    <div id='dev'>
+        <b style="display: block; margin-bottom: 8px;">My projects on:</b>
+		<a id="codegoogle" href="http://code.google.com/u/111513182619415651790/">Google Code</a><br>
+		<a id="github" href="http://github.com/WNeZRoS">GitHub</a><br>
+		<a id="bitbucket" href="http://bitbucket.org/WNeZRoS">Bitbucket</a><br>
+    </div>
+    
+	<div id='html'>
+		<div id='data'>
+			<h2><a href="https://play.google.com/store/apps/developer?id=WNeZRoS">Download my app from Google Play</a></h2>
+		</div>
+	</div>
+	<div id='left'>
+		<div id='links'>
+			<b style="display: block; margin-bottom: 8px;">You can see me in:</b> 
+			<a id="google" href="http://gplus.to/wnezros/">Google+</a><br>
+			<a id="facebook" href="http://facebook.com/wnezros/">Facebook</a><br>
+			<a id="vkontakte" href="http://vk.com/wnezros">VKontakte</a><br>
+			<a id="twitter" href="http://twitter.com/WNeZRoS/">Twitter</a><br>
+			<a id="linkedin" href="linkedin.com/profile/view?id=177701469">LinkedIn</a><br>
+			<a id="habr" href="http://habrahabr.ru/users/wnezros/">Habrahabr</a><br>
+			<a id="steam" href="http://steamcommunity.com/id/wnezros/">Steam</a><br>
+			<a id="lastfm" href="http://www.lastfm.ru/user/WNeZRoS">LastFM</a><br>
+			<a id="email" href="mailto: wnezros@gmail.com">wnezros@gmail.com</a><br>
+			<a id="skype" href="skype:wnezros">wnezros</a><br>
+			<a id="icq" href="http://www.icq.com/people/6361233">6361233</a><br>
+			<a id="other" href="http://www.google.ru/#q=WNeZRoS">Other</a>
+		</div>
+	</div>
+	<div id='avatar'>
+		<div><img src="avatar.png" id="avaimg"></div>
+	</div>
+	<div id='vip_zone'><a href="vip.php">Enter VIP Zone</a></div>
+</body>
+</html>
