@@ -2,112 +2,43 @@
 <html>
 <head>
 	<title>I'm in ...</title>
+	<meta name="viewport" content="width=device-width"></meta>
 	<style>
-	#left::-webkit-scrollbar {
-		height: 12px;
-		width: 6px;
-		background: #333;
-	}
-	#left::-webkit-scrollbar-thumb {
-		background: #555;
-		-webkit-border-radius: 1ex;
-		-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
-	}
-	
 	body {
 		padding: 0 0 0 0;
 		margin: 0 0 0 0;
 		background: #333333;
 		color: white;
-		/*overflow: hidden;*/
-	}
-	
-	#avatar {
-		width: 17%;
-		background: #222222;
-		height: 25%;
-		position: fixed;
-		top: 3%;
-		left: 2%;
-		border: 1px #555555 solid;
-		text-align: center;
-		overflow: hidden;
-	}
-	
-	#avatar div {
-		margin: 3px 3px 3px 3px;
-		height: 95%;
-	}
-	
-	#avatar img {
-		height: 100%;
-		border: 1px solid #1F1F1F;
-	}
-	
-	#left {
-		width: 17%;
-		background: #222222;
-		color: silver;
-		min-height: 60%;
-		position: fixed;
-		top: 30%;
-		left: 2%;
-		border: 1px #555555 solid;
-		overflow: auto;
-	}
-	
-	#dev {
-		width: 130px;
-		background: #222222;
-		color: silver;
-		min-height: 30%;
-		position: fixed;
-		top: 20%;
-		left: 78%;
-		border: 1px #888 solid;
-		overflow: auto;
-		text-align: right;
-		padding: 10px 10px 10px 10px;
 	}
 	
 	#html {
-		position: absolute;
-		top: 5%;
-		left: 15%;
-		height: 85%;
-		width: 60%;
+		max-width: 300px;
+		display: flex;
+		flex-flow: row wrap;
+		margin: 0 auto;
 	}
-	
-	#data {
-		padding-left:10%;
-		padding-right: 2%;
-		padding-bottom: 2%;
-		background: #111111;
+
+	.block {
+		background: #444;
 		color: silver;
-		border: 1px #555555 solid;
-		width: 95%;
-		min-height: 100%;
+		border: 1px #666 solid;
+		box-shadow: 0 0 10px rgb(0,0,0);
+		padding: 20px;
+		margin: 10px;
+		min-width: 200px;
 	}
 	
-	#vip_zone {
-		position: fixed;
-		top: 96%;
-		left: 5%;
+	.block_header {
+		display: block;
+		margin-bottom: 8px;
 	}
 	
-	#vip_zone a { color: #333333; }
-	#vip_zone a:hover { color: #999; text-decoration: none; }
-	
-	#left #links {
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		padding-right: 8px;
-		padding-top: 8px;
-		width:90%;
-		text-align: right;
+	.column {
+		float:left; 
+		width:300px;
+		margin: -10px 0;
 	}
-	
+
 	a {
 		color: silver;
 		text-decoration: none;
@@ -123,76 +54,118 @@
 	#left a:hover { text-decoration: underline; color: orange; }
 	a:active { color: orange; }
 	
-	#google { background: url(http://favicon.yandex.net/favicon/plus.google.com) right center no-repeat; padding-right: 24px; }
-	#facebook { background: url(http://favicon.yandex.net/favicon/facebook.com) right center no-repeat; padding-right: 24px; }
-	#vkontakte { background: url(http://favicon.yandex.net/favicon/vk.com) right center no-repeat; padding-right: 24px; }
-	#twitter { background: url(http://favicon.yandex.net/favicon/twitter.com) right center no-repeat; padding-right: 24px; }
-	#linkedin { background: url(http://favicon.yandex.net/favicon/linkedin.com) right center no-repeat; padding-right: 24px; }
-	#habr { background: url(http://favicon.yandex.net/favicon/habrahabr.ru) right center no-repeat; padding-right: 24px; }
-	#steam { background: url(http://favicon.yandex.net/favicon/steampowered.com) right center no-repeat; padding-right: 24px; }
-	#lastfm { background: url(http://favicon.yandex.net/favicon/last.fm) right center no-repeat; padding-right: 24px; }
-	#kinopoisk { background: url(http://favicon.yandex.net/favicon/kinopoisk.ru) right center no-repeat; padding-right: 24px; }
-	#email { background: url(http://favicon.yandex.net/favicon/mail.yandex.ru) right center no-repeat; padding-right: 24px; }
-	#skype { background: url(http://favicon.yandex.net/favicon/skype.com) right center no-repeat; padding-right: 24px; }
-	#icq { background: url(http://favicon.yandex.net/favicon/icq.com) right center no-repeat; padding-right: 24px; }
-	#other { background: url(http://favicon.yandex.net/favicon/google.com) right center no-repeat; padding-right: 24px; }
+	#google { background: url(http://favicon.yandex.net/favicon/plus.google.com) left center no-repeat; padding-left: 24px; }
+	#facebook { background: url(http://favicon.yandex.net/favicon/facebook.com) left center no-repeat; padding-left: 24px; }
+	#vkontakte { background: url(http://favicon.yandex.net/favicon/vk.com) left center no-repeat; padding-left: 24px; }
+	#twitter { background: url(http://favicon.yandex.net/favicon/twitter.com) left center no-repeat; padding-left: 24px; }
+	#linkedin { background: url(http://favicon.yandex.net/favicon/linkedin.com) left center no-repeat; padding-left: 24px; }
+	#foursquare { background: url(http://favicon.yandex.net/favicon/foursquare.com) left center no-repeat; padding-left: 24px; }
 	
-	#codegoogle { background: url(http://favicon.yandex.net/favicon/code.google.com) right center no-repeat; padding-right: 24px; }
-	#github { background: url(http://favicon.yandex.net/favicon/github.com) right center no-repeat; padding-right: 24px; }
-	#bitbucket { background: url(http://favicon.yandex.net/favicon/bitbucket.org) right center no-repeat; padding-right: 24px; }
-
+	#email { background: url(http://favicon.yandex.net/favicon/mail.yandex.ru) left center no-repeat; padding-left: 24px; }
+	#skype { background: url(http://favicon.yandex.net/favicon/skype.com) left center no-repeat; padding-left: 24px; }
+	#telegram { background: url(http://favicon.yandex.net/favicon/telegram.org) left center no-repeat; padding-left: 24px; }
+	#icq { background: url(http://favicon.yandex.net/favicon/icq.com) left center no-repeat; padding-left: 24px; }
+	
+	#steam { background: url(http://favicon.yandex.net/favicon/steampowered.com) left center no-repeat; padding-left: 24px; }
+	#battlelog { background: url(http://favicon.yandex.net/favicon/battlelog.battlefield.com) left center no-repeat; padding-left: 24px; }
+	#socialclub { background: url(http://favicon.yandex.net/favicon/socialclub.rockstargames.com) left center no-repeat; padding-left: 24px; }
+	#uplay { background: url(http://favicon.yandex.net/favicon/uplay.ubi.com) left center no-repeat; padding-left: 24px; }
+	
+	#youtube { background: url(http://favicon.yandex.net/favicon/youtube.com) left center no-repeat; padding-left: 24px; }
+	#twitch { background: url(http://favicon.yandex.net/favicon/twitch.com) left center no-repeat; padding-left: 24px; }
+	#lastfm { background: url(http://favicon.yandex.net/favicon/last.fm) left center no-repeat; padding-left: 24px; }
+	#kinopoisk { background: url(http://favicon.yandex.net/favicon/kinopoisk.ru) left center no-repeat; padding-left: 24px; }
+	
+	#habr { background: url(http://favicon.yandex.net/favicon/habrahabr.ru) left center no-repeat; padding-left: 24px; }
+	#pda4 { background: url(http://favicon.yandex.net/favicon/4pda.ru) left center no-repeat; padding-left: 24px; }
+	#other { background: url(http://favicon.yandex.net/favicon/google.com) left center no-repeat; padding-left: 24px; }
+	
+	#gplay { background: url(http://favicon.yandex.net/favicon/play.google.com) left center no-repeat; padding-left: 24px; }
+	
+	#codegoogle { background: url(http://favicon.yandex.net/favicon/code.google.com) left center no-repeat; padding-left: 24px; }
+	#github { background: url(http://favicon.yandex.net/favicon/github.com) left center no-repeat; padding-left: 24px; }
+	#bitbucket { background: url(http://favicon.yandex.net/favicon/bitbucket.org) left center no-repeat; padding-left: 24px; }
+	
+	@media screen and (min-width: 600px) {
+		#html {
+			max-width:600px;
+		}
+			
+		#projects { order: 1; }
+		#messengers { order: 2; }
+		#dev { order: 3; }
+		#games { order: 4; }
+		#media { order: 6; }
+		#otherb { order: 5; }
+	}
+	@media screen and (min-width: 900px) {
+		#html {
+			max-width:900px;
+		}
+				
+		#projects { order: 4; }
+		#messengers { order: 3; }
+		#dev { order: 1; }
+		#games { order: 2; }
+		#media { order: 5; }
+		#otherb { order: 6; }
+	}
 	</style>
-	<script language="JavaScript">
-	function expandImage() {
-		img = document.getElementById('screen');
-		if(img.style.height == 'auto')
-		    img.style.height = '0px';
-		else
-		    img.style.height = 'auto';
-	}
-	
-	var avatars = ['avatar.png', 'avatar.png'];
-	var ava_id = 0;
-	function changeAvatar() {
-		ava_id = (ava_id + 1) % avatars.length;
-		document.getElementById('avaimg').src = avatars[ava_id];
-	}
-	</script>
 </head>
-<body onLoad="setInterval('changeAvatar();', 20000);">
-    <div id='dev'>
-        <b style="display: block; margin-bottom: 8px;">My projects on:</b>
-		<a id="codegoogle" href="http://code.google.com/u/111513182619415651790/">Google Code</a><br>
-		<a id="github" href="http://github.com/WNeZRoS">GitHub</a><br>
-		<a id="bitbucket" href="http://bitbucket.org/WNeZRoS">Bitbucket</a><br>
-    </div>
-    
+<body>
 	<div id='html'>
-		<div id='data'>
-			<h2><a href="https://play.google.com/store/apps/developer?id=WNeZRoS">Download my app from Google Play</a></h2>
-		</div>
-	</div>
-	<div id='left'>
-		<div id='links'>
-			<b style="display: block; margin-bottom: 8px;">You can see me in:</b> 
+		<div id='social' class='block'>
+			<b class='block_header'>Social Networks:</b> 
 			<a id="google" href="http://gplus.to/wnezros/">Google+</a><br>
 			<a id="facebook" href="http://facebook.com/wnezros/">Facebook</a><br>
 			<a id="vkontakte" href="http://vk.com/reejk">VKontakte</a><br>
 			<a id="twitter" href="http://twitter.com/WNeZRoS/">Twitter</a><br>
-			<a id="linkedin" href="linkedin.com/profile/view?id=177701469">LinkedIn</a><br>
-			<a id="habr" href="http://habrahabr.ru/users/wnezros/">Habrahabr</a><br>
+			<a id="linkedin" href="http://linkedin.com/profile/view?id=177701469">LinkedIn</a><br>
+			<a id="foursquare" href="http://ru.foursquare.com/wnezros">Foursquare</a><br>
+		</div>
+		
+		<div id='messengers' class='block'>
+			<b class='block_header'>Messengers:</b> 
+			<a id="skype" href="skype:wnezros">wnezros</a><br>
+			<a id="telegram" href="http://telegram.me/reejk">Telegram</a><br>
+			<a id="email" href="mailto: wnezros@gmail.com">wnezros@gmail.com</a><br>
+			<a id="icq" href="http://www.icq.com/people/6361233">6361233</a><br>
+		</div>
+
+		<div id='projects' class='block'>
+			<b style="display: block; margin-bottom: 8px;">My Projects:</b>
+			<a id="gplay" href="https://play.google.com/store/apps/details?id=com.app.numconv">Numbers Convert</a><br>
+		</div>
+
+		<div id='dev' class='block'>
+			<b style="display: block; margin-bottom: 8px;">My Open Source Projects:</b>
+			<a id="github" href="http://github.com/WNeZRoS">GitHub</a><br>
+			<a id="bitbucket" href="http://bitbucket.org/WNeZRoS">Bitbucket</a><br>
+			<a id="codegoogle" href="http://code.google.com/u/111513182619415651790/">Google Code</a><br>
+		</div>
+
+		<div id='games' class='block'>
+			<b class='block_header'>Games:</b> 
 			<a id="steam" href="http://steamcommunity.com/id/reejk/">Steam</a><br>
+			<a id="battlelog" href="http://battlelog.battlefield.com/bf4/user/ReeJK/">Battlefield</a><br>
+			<a id="socialclub" href="http://socialclub.rockstargames.com/member/reejk./">Social Club</a><br>
+			<a id="uplay" href="https://uplay.ubi.com/ru-RU/profile/ReeJK./">UPlay</a><br>
+		</div>
+	
+		<div id='media' class='block'>
+			<b class='block_header'>Media:</b> 
+			<a id="youtube" href="http://www.youtube.com/channel/UCtg-QAns78z99lN97agSa0A">YouTube</a><br>
+			<a id="twitch" href="http://www.twitch.tv/ReeJK">Twitch</a><br>
 			<a id="lastfm" href="http://www.lastfm.ru/user/WNeZRoS">LastFM</a><br>
 			<a id="kinopoisk" href="http://www.kinopoisk.ru/user/1736235/go/">Kino Poisk</a><br>
-			<a id="email" href="mailto: wnezros@gmail.com">wnezros@gmail.com</a><br>
-			<a id="skype" href="skype:wnezros">wnezros</a><br>
-			<a id="icq" href="http://www.icq.com/people/6361233">6361233</a><br>
+		</div>
+		
+		<div id='otherb' class='block'>
+			<b class='block_header'>Other links:</b> 
+			<a id="habr" href="http://habrahabr.ru/users/wnezros/">Habrahabr</a><br>
+			<a id="pda4" href="http://4pda.ru/forum/index.php?showuser=1424372">4PDA</a><br>
 			<a id="other" href="http://www.google.ru/#q=WNeZRoS">Other</a>
 		</div>
 	</div>
-	<div id='avatar'>
-		<div><img src="avatar.png" id="avaimg" style="visibility:hidden;"></div>
-	</div>
-	<div id='vip_zone'><a href="vip.php">Enter VIP Zone</a></div>
 </body>
 </html>
