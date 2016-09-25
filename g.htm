@@ -185,7 +185,17 @@
 		
 		function getLocalized(key) {
 			var lang = navigator.language || navigator.userLanguage;
-			return localization[lang][key] || localization['en'][key];
+			var loc = localization[lang];
+			if (loc == undefined) {
+				var langMinusIndex = lang.indexOf('-');
+				if (langMinusIndex != -1) {
+					lang = lang.substring(0, langMinusIndex);
+					loc = localization[lang];
+				}
+			}
+			if (loc == undefined)
+				loc = localization['en'];
+			return loc[key];
 		}
 	</script>
 </head>
