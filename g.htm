@@ -185,17 +185,15 @@
 		
 		function getLocalized(key) {
 			var lang = navigator.language || navigator.userLanguage;
-			var loc = localization[lang];
-			if (loc == undefined) {
+			if (!(lang in localization)) {
 				var langMinusIndex = lang.indexOf('-');
 				if (langMinusIndex != -1) {
 					lang = lang.substring(0, langMinusIndex);
-					loc = localization[lang];
+					if (!(lang in localization))
+						lang = 'en';					
 				}
 			}
-			if (loc == undefined)
-				loc = localization['en'];
-			return loc[key];
+			return localization[lang][key];
 		}
 	</script>
 </head>
