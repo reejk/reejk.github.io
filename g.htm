@@ -199,7 +199,7 @@
 </head>
 <body onload='initialize();'>
 	<div id='result' class='line'></div>
-	<div class='line'><input type='text' id='data'></div>
+	<div class='line'><input type='text' id='data' onPaste='setTimeout(decode, 500);'></div>
 	<div class='line'><input type='button' id='decode' value='Decode!' class='button' onClick='decode();'></div>
 	<img src='http://maps.gstatic.com/mapfiles/api-3/images/powered-by-google-on-white2.png' align='rigth' class='line'>
 </body>
