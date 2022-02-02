@@ -1,160 +1,162 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>I'm in ...</title>
+	<title>@reejk in ...</title>
 	<meta name="viewport" content="width=device-width"></meta>
+	<link rel="icon" type="image/x-icon" href="goo_R.png">
 	<style>
 	body {
-		padding: 0 0 0 0;
+		padding: 1em;
 		margin: 0 0 0 0;
-		background: #333333;
+		background: #333333 url(goo.svg);
 		color: white;
 	}
 	
-	#html {
-		max-width: 300px;
-		display: flex;
-		flex-flow: row wrap;
+	* { font-family: sans-serif; }
+
+	.wide {
+		display: block;
 		margin: 0 auto;
+		max-width: 50em;
 	}
 
 	.block {
-		background: #444;
-		color: silver;
-		border: 1px #666 solid;
-		box-shadow: 0 0 10px rgb(0,0,0);
-		padding: 20px;
-		margin: 10px;
-		min-width: 200px;
+		box-shadow: 0 0 0.5em rgb(20,20,20);
+		border-radius: 0.5em;
+		padding: 1em;
 	}
 	
-	.block_header {
-		display: block;
-		margin-bottom: 8px;
+	.light {
+		background: #ffffff66;
+		color: #040404;
+		border: 1px #606060 solid;
 	}
 	
-	.column {
-		float:left; 
-		width:300px;
-		margin: -10px 0;
+	.dark {
+		background: #00000044;
+		color: #eee;
+		border: 1px #202020 solid;
+	}
+	
+	.flex {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: stretch;
+		margin: 0.5em -0.5em;
+	}
+	
+	.flex-block {
+		margin: 0.5em;
+		flex-grow: 1;
 	}
 
-	a {
-		color: silver;
-		text-decoration: none;
+	.dark a { color: #eee; text-decoration: none; }
+	.dark a:visited { color: #edc; text-decoration: none; }	
+	.dark a:hover { text-decoration: underline; }
+	.dark a:active { color: orange; }
+	
+	
+	.light a { color: #040404; text-decoration: none; }
+	.light a:visited { color: #123; text-decoration: none; }
+	.light a:hover { text-decoration: underline; }
+	.light a:active { color: orange; }
+	
+	h1 { margin: 0em 0em 1em 0em; }
+	h3 { margin: 0em 0em 1em 0em; }
+	ul { padding-left: 1em; margin: 0; }
+	
+	li::marker {
+		color: #00000000;
 	}
 	
-	a:visited {
-		color: gray;
-		text-decoration: none;
+	li a { 
+		display: inline-block;
+		margin-left: -1em;
+		padding: 0.25em;
+		font-size: 1.1em;
+		background-size: 1.5em;
+		background-position-y: center;
+		background-repeat: no-repeat;
+		padding-left: 2em;
 	}
 	
-	a:hover { text-decoration: underline; color: white; }
-	a.noline:hover { text-decoration: none; color: white; }
-	#left a:hover { text-decoration: underline; color: orange; }
-	a:active { color: orange; }
+	#facebook { background-image: url(http://favicon.yandex.net/favicon/facebook.com?size=32); }
+	#vkontakte { background-image: url(http://favicon.yandex.net/favicon/vk.com?size=32); }
+	#twitter { background-image: url(http://favicon.yandex.net/favicon/twitter.com?size=32); }
+	#linkedin { background-image: url(http://favicon.yandex.net/favicon/linkedin.com?size=32); }
 	
-	#facebook { background: url(http://favicon.yandex.net/favicon/facebook.com) left center no-repeat; padding-left: 24px; }
-	#vkontakte { background: url(http://favicon.yandex.net/favicon/vk.com) left center no-repeat; padding-left: 24px; }
-	#twitter { background: url(http://favicon.yandex.net/favicon/twitter.com) left center no-repeat; padding-left: 24px; }
-	#linkedin { background: url(http://favicon.yandex.net/favicon/linkedin.com) left center no-repeat; padding-left: 24px; }
+	#email { background-image: url(http://favicon.yandex.net/favicon/mail.yandex.ru?size=32); }
+	#telegram { background-image: url(http://favicon.yandex.net/favicon/telegram.org?size=32); }
 	
-	#email { background: url(http://favicon.yandex.net/favicon/mail.yandex.ru) left center no-repeat; padding-left: 24px; }
-	#telegram { background: url(http://favicon.yandex.net/favicon/telegram.org) left center no-repeat; padding-left: 24px; }
+	#steam { background-image: url(http://favicon.yandex.net/favicon/steampowered.com?size=32); }
+	#socialclub { background-image: url(http://favicon.yandex.net/favicon/socialclub.rockstargames.com?size=32); }
 	
-	#steam { background: url(http://favicon.yandex.net/favicon/steampowered.com) left center no-repeat; padding-left: 24px; }
-	#battlelog { background: url(http://favicon.yandex.net/favicon/battlelog.battlefield.com) left center no-repeat; padding-left: 24px; }
-	#socialclub { background: url(http://favicon.yandex.net/favicon/socialclub.rockstargames.com) left center no-repeat; padding-left: 24px; }
-	#uplay { background: url(http://favicon.yandex.net/favicon/uplay.ubi.com) left center no-repeat; padding-left: 24px; }
+	#youtube { background-image: url(http://favicon.yandex.net/favicon/youtube.com?size=32); }
+	#twitch { background-image: url(http://favicon.yandex.net/favicon/twitch.com?size=32); }
 	
-	#youtube { background: url(http://favicon.yandex.net/favicon/youtube.com) left center no-repeat; padding-left: 24px; }
-	#twitch { background: url(http://favicon.yandex.net/favicon/twitch.com) left center no-repeat; padding-left: 24px; }
-	#kinopoisk { background: url(http://favicon.yandex.net/favicon/kinopoisk.ru) left center no-repeat; padding-left: 24px; }
+	#habr { background-image: url(http://favicon.yandex.net/favicon/habr.com?size=32); }
+	#other { background-image: url(http://favicon.yandex.net/favicon/google.com?size=32); }
 	
-	#habr { background: url(http://favicon.yandex.net/favicon/habrahabr.ru) left center no-repeat; padding-left: 24px; }
-	#pda4 { background: url(http://favicon.yandex.net/favicon/4pda.ru) left center no-repeat; padding-left: 24px; }
-	#other { background: url(http://favicon.yandex.net/favicon/google.com) left center no-repeat; padding-left: 24px; }
+	#gplay { background-image: url(http://favicon.yandex.net/favicon/play.google.com?size=32); }
+	#itch { background-image: url(http://favicon.yandex.net/favicon/reejk.itch.io?size=32); }
 	
-	#gplay { background: url(http://favicon.yandex.net/favicon/play.google.com) left center no-repeat; padding-left: 24px; }
-	#itch { background: url(http://favicon.yandex.net/favicon/reejk.itch.io) left center no-repeat; padding-left: 24px; }
+	#github { background-image: url(http://favicon.yandex.net/favicon/github.com?size=32); }
+	#bitbucket { background-image: url(http://favicon.yandex.net/favicon/bitbucket.org?size=32); }
 	
-	#github { background: url(http://favicon.yandex.net/favicon/github.com) left center no-repeat; padding-left: 24px; }
-	#bitbucket { background: url(http://favicon.yandex.net/favicon/bitbucket.org) left center no-repeat; padding-left: 24px; }
-	
-	@media screen and (min-width: 600px) {
-		#html {
-			max-width:600px;
-		}
-			
-		#projects { order: 1; }
-		#messengers { order: 2; }
-		#dev { order: 3; }
-		#games { order: 4; }
-		#media { order: 6; }
-		#otherb { order: 5; }
-	}
-	@media screen and (min-width: 900px) {
-		#html {
-			max-width:900px;
-		}
-				
-		#projects { order: 4; }
-		#messengers { order: 3; }
-		#dev { order: 1; }
-		#games { order: 2; }
-		#media { order: 5; }
-		#otherb { order: 6; }
-	}
 	</style>
 </head>
 <body>
-	<div id='html'>
-		<div id='social' class='block'>
-			<b class='block_header'>Social Networks:</b> 
-			<a id="vkontakte" href="http://vk.com/reejk">VKontakte</a><br>
-			<a id="twitter" href="http://twitter.com/WNeZRoS/">Twitter</a><br>
-			<a id="facebook" href="http://facebook.com/wnezros/">Facebook</a><br>
-			<a id="linkedin" href="http://linkedin.com/profile/view?id=177701469">LinkedIn</a>
+	<div class='wide'>
+		<div class='block dark'>
+			<h1>@reejk <span style='font-size: 50%; font-weight: normal;'>(also known as @wnezros)</span></h1>
+			Welcome to my personal page.
 		</div>
 		
-		<div id='messengers' class='block'>
-			<b class='block_header'>Messengers:</b> 
-			<a id="telegram" href="http://telegram.me/reejk">Telegram</a><br>
-			<a id="email" href="mailto: wnezros@gmail.com">wnezros@gmail.com</a>
-		</div>
-
-		<div id='projects' class='block'>
-			<b style="display: block; margin-bottom: 8px;">My Projects:</b>
-			<a id="gplay" href="https://play.google.com/store/apps/details?id=com.app.numconv">Numbers Convert</a><br>
-			<a id="itch" href="https://reejk.itch.io/">Games on itch.io</a>
-		</div>
-
-		<div id='dev' class='block'>
-			<b style="display: block; margin-bottom: 8px;">My Open Source Projects:</b>
-			<a id="github" href="http://github.com/ReeJK">GitHub</a><br>
-			<a id="bitbucket" href="http://bitbucket.org/WNeZRoS">Bitbucket</a>
-		</div>
-
-		<div id='games' class='block'>
-			<b class='block_header'>Games:</b> 
-			<a id="steam" href="http://steamcommunity.com/id/reejk/">Steam</a><br>
-			<a id="battlelog" href="http://battlelog.battlefield.com/bf4/user/ReeJK/">Battlefield</a><br>
-			<a id="socialclub" href="http://socialclub.rockstargames.com/member/reejk./">Social Club</a><br>
-			<a id="uplay" href="https://uplay.ubi.com/ru-RU/profile/ReeJK./">UPlay</a><br>
-		</div>
-	
-		<div id='media' class='block'>
-			<b class='block_header'>Media:</b> 
-			<a id="youtube" href="http://www.youtube.com/channel/UCtg-QAns78z99lN97agSa0A">YouTube</a><br>
-			<a id="twitch" href="http://www.twitch.tv/ReeJK">Twitch</a><br>
-			<a id="kinopoisk" href="http://www.kinopoisk.ru/user/1736235/go/">Kino Poisk</a><br>
+		<div class='flex'>	
+			<div id='actual' class='flex-block block dark'>
+				<h3>Actual Contacts</h3>
+				
+				<ul>
+					<li><a id="telegram" href="https://telegram.me/reejk">Telegram</a></li>
+					<li><a id="vkontakte" href="https://vk.com/reejk">VK.com</a></li>
+					<li><a id="email" href="mailto: wnezros@gmail.com">wnezros@gmail.com</a></li>
+				</ul>
+			</div>
+		
+			<div id='projects' class='flex-block block light'>
+				<h3>My Projects</h3>
+				<ul>
+					<li><a id="itch" href="https://reejk.itch.io/">Games on itch.io</a></li>
+					<li><a id="gplay" href="https://play.google.com/store/apps/developer?id=WNeZRoS">Google Play</a></li>
+					<li><a id="github" href="https://github.com/ReeJK">GitHub</a></li>
+					<li><a id="bitbucket" href="https://bitbucket.org/WNeZRoS">Bitbucket</a></li>
+				</ul>
+			</div>
+			
+			<div id='media' class='flex-block block dark'>
+				<h3>Media & Games</h3>
+				<ul>
+					<li><a id="youtube" href="https://youtube.com/channel/UCtg-QAns78z99lN97agSa0A">YouTube</a></li>
+					<li><a id="twitch" href="https://twitch.tv/ReeJK">Twitch</a></li>		
+					<li><a id="steam" href="https://steamcommunity.com/id/reejk/">Steam</a></li>
+					<li><a id="socialclub" href="https://socialclub.rockstargames.com/member/reejk./">Social Club</a></li>
+				</ul>
+			</div>
 		</div>
 		
-		<div id='otherb' class='block'>
-			<b class='block_header'>Other links:</b> 
-			<a id="habr" href="http://habrahabr.ru/users/wnezros/">Habrahabr</a><br>
-			<a id="pda4" href="http://4pda.ru/forum/index.php?showuser=1424372">4PDA</a><br>
-			<a id="other" href="http://www.google.ru/#q=WNeZRoS">Other</a>
+		<div class='flex'>
+			<div class='flex-block block dark' style='flex-grow: 7; visibility: hidden; min-width: 30em; padding: 0;'></div>
+		
+			<div class='flex-block block light'>
+				<h3>Other Links</h3>
+				<ul>
+					<li><a id="habr" href="https://habrahabr.ru/users/wnezros/">Habr</a></li>
+					<li><a id="twitter" href="https://twitter.com/WNeZRoS/">Twitter</a></li>
+					<li><a id="facebook" href="https://facebook.com/wnezros/">Facebook</a></li>
+					<li><a id="linkedin" href="https://linkedin.com/profile/view?id=177701469">LinkedIn</a></li>
+					<li><a id="other" href="https://google.com?q=WNeZRoS">Google</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>

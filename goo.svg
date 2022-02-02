@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="1920" height="1080" version="1.1" viewBox="0 0 508 285.75" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(0 -11.25)">
+  <rect x="-21.167" y="173.66" width="39.823" height="125.37" fill="#de6400" style="paint-order:stroke markers fill"/>
+  <g transform="translate(5.2917)">
+   <g transform="matrix(.85714 0 0 .85714 -49.137 167.16)">
+    <path transform="matrix(.30868 0 0 .30868 57.326 -181.9)" d="m196.02 780.03a300 300 0 0 0-296.01 302.63 300 300 0 0 0 301.31 297.34 300 300 0 0 0 298.67-300l-0.0469-5.3047a300 300 0 0 0-303.93-294.67zm1.9902 149.99a150 150 0 0 1 151.96 147.33l0.02344 2.6523a150 150 0 0 1-149.34 150 150 150 0 0 1-150.66-148.67 150 150 0 0 1 148.01-151.31z" fill="#de6400" style="paint-order:stroke markers fill"/>
+   </g>
+   <g transform="matrix(.85714 0 0 .85714 -49.137 48.098)">
+    <path transform="matrix(.30868 0 0 .30868 57.326 -42.99)" d="m196.02 330.03a300 300 0 0 0-296.01 302.62 300 300 0 0 0 301.31 297.35 300 300 0 0 0 298.67-300l-0.0469-5.3047a300 300 0 0 0-303.93-294.67zm1.9902 149.99a150 150 0 0 1 151.96 147.33l0.02344 2.6523a150 150 0 0 1-149.34 150 150 150 0 0 1-150.66-148.67 150 150 0 0 1 148.01-151.31z" fill="#de5700" style="paint-order:stroke markers fill"/>
+   </g>
+  </g>
+  <g transform="matrix(.85714 0 0 .85714 151.95 48.098)">
+   <path transform="matrix(.30868 0 0 .30868 -174.18 -42.99)" d="m946.02 330.03a300 300 0 0 0-296.01 302.62 300 300 0 0 0 301.31 297.35 300 300 0 0 0 298.67-300l-0.047-5.3047a300 300 0 0 0-303.93-294.67zm1.9902 149.99a150 150 0 0 1 151.96 147.33l0.0234 2.6523a150 150 0 0 1-149.34 150 150 150 0 0 1-150.66-148.67 150 150 0 0 1 148.01-151.31z" fill="#de5700" style="paint-order:stroke markers fill"/>
+  </g>
+  <g transform="matrix(.85714 0 0 .85714 347.74 48.098)">
+   <path transform="matrix(.30868 0 0 .30868 -405.69 -42.99)" d="m1696 330.03a300 300 0 0 0-296.01 302.62 300 300 0 0 0 301.31 297.35 300 300 0 0 0 298.67-300l-0.0469-5.3047a300 300 0 0 0-303.93-294.67zm1.9902 149.99a150 150 0 0 1 151.96 147.33l0.0234 2.6523a150 150 0 0 1-149.34 150 150 150 0 0 1-150.66-148.67 150 150 0 0 1 148.01-151.31z" fill="#de5700" style="paint-order:stroke markers fill"/>
+  </g>
+ </g>
+</svg>
