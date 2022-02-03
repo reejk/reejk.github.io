@@ -5,10 +5,12 @@
 	<meta name="viewport" content="width=device-width"></meta>
 	<link rel="icon" type="image/x-icon" href="goo_R.png">
 	<style>
+	
 	body {
-		padding: 1em;
+		padding: 0 0 0 0;
 		margin: 0 0 0 0;
 		background: #333333 url(goo.svg);
+		background-repeat: no-repeat;
 		color: white;
 	}
 	
@@ -17,17 +19,18 @@
 	.wide {
 		display: block;
 		margin: 0 auto;
+		padding: 1em;
 		max-width: 50em;
 	}
 
 	.block {
-		box-shadow: 0 0 0.5em rgb(20,20,20);
+		box-shadow: 0 0 0.5em #20202080;
 		border-radius: 0.5em;
 		padding: 1em;
 	}
 	
 	.light {
-		background: #ffffff66;
+		background: #ffffffaa;
 		color: #040404;
 		border: 1px #606060 solid;
 	}
@@ -39,17 +42,23 @@
 	}
 	
 	.flex {
-		display: flex;
-		flex-flow: row wrap;
-		align-items: stretch;
-		margin: 0.5em -0.5em;
+		display: grid;
+		grid-gap: 1em;
+	}
+	
+	@media screen and (min-width: 600px) {
+		.flex { grid-template-columns: 1fr; }
+	}
+	
+	@media screen and (min-width: 800px) {
+		.flex { grid-template-columns: 1fr 1fr; }
 	}
 	
 	.flex-block {
-		margin: 0.5em;
-		flex-grow: 1;
 	}
 
+	#welcome { grid-column: 1 / -1;  }
+	#others { grid-column: -1; }
 	.dark a { color: #eee; text-decoration: none; }
 	.dark a:visited { color: #edc; text-decoration: none; }	
 	.dark a:hover { text-decoration: underline; }
@@ -70,6 +79,7 @@
 	}
 	
 	li a { 
+		white-space: nowrap;
 		display: inline-block;
 		margin-left: -1em;
 		padding: 0.25em;
@@ -107,12 +117,12 @@
 </head>
 <body>
 	<div class='wide'>
-		<div class='block dark'>
-			<h1>@reejk <span style='font-size: 50%; font-weight: normal;'>(also known as @wnezros)</span></h1>
-			Welcome to my personal page.
-		</div>
+		<div class='flex'>
+			<div class='block dark' id='welcome'>
+				<h1>@reejk <span style='font-size: 50%; font-weight: normal; white-space: nowrap;'>(also known as @wnezros)</span></h1>
+				Welcome to my personal page.
+			</div>
 		
-		<div class='flex'>	
 			<div id='actual' class='flex-block block dark'>
 				<h3>Actual Contacts</h3>
 				
@@ -142,12 +152,8 @@
 					<li><a id="socialclub" href="https://socialclub.rockstargames.com/member/reejk./">Social Club</a></li>
 				</ul>
 			</div>
-		</div>
-		
-		<div class='flex'>
-			<div class='flex-block block dark' style='flex-grow: 7; visibility: hidden; min-width: 30em; padding: 0;'></div>
-		
-			<div class='flex-block block light'>
+					
+			<div class='flex-block block light' id='others'>
 				<h3>Other Links</h3>
 				<ul>
 					<li><a id="habr" href="https://habrahabr.ru/users/wnezros/">Habr</a></li>
